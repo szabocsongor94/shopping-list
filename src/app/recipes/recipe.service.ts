@@ -20,7 +20,7 @@ export class RecipeService {
         new Recipe(
             'Another Test Recipe', 
             'This is simply a test', 
-            'https://www.averiecooks.com/wp-content/uploads/2021/01/garlicbutterchicken-5.jpg',
+            'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574',
             [
                 new Ingredient('Meat', 1),
                 new Ingredient('Buns', 2)
@@ -31,6 +31,10 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe(index: number) {
+        return this.recipes.slice()[index];
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
