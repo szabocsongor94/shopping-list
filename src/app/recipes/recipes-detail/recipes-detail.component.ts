@@ -9,6 +9,7 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipes-detail.component.css']
 })
 export class RecipesDetailComponent implements OnInit {
+
   recipe: Recipe;
   id:  number;
 
