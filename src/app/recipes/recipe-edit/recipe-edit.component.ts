@@ -13,7 +13,11 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   recipeForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private recipeService: RecipeService, 
+    private router: Router
+    ) { }
 
   get controls() {
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
@@ -41,7 +45,7 @@ export class RecipeEditComponent implements OnInit {
     //  this.recipeForm.value['imagePath'],
     //  this.recipeForm.value['ingredients']);
     if (this.editMode) {
-      this.recipeService.updateRecipe(this.id, this.recipeForm.value)
+      this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
