@@ -12,6 +12,7 @@ export class DataStorageservice {
 
     storeRecipes() {
         const recipes = this.recipeService.getRecipes();
+        console.log(recipes);
 
         this.http
             .put(

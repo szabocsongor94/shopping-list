@@ -3,11 +3,12 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/r
 
 import { DataStorageservice } from "../shared/data-storage.service";
 import { Recipe } from "./recipe.model";
+import { RecipeService } from "./recipe.service";
 
 Injectable({ providedIn: 'root' })
-export class RecipesResolverService implements Resolve<Recipe>{
+export class RecipesResolverService implements Resolve<Recipe[]>{
     recipesService: any;
-    constructor(private dataStorageService: DataStorageservice) { }
+    constructor(private dataStorageService: DataStorageservice, private recipeService: RecipeService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const recipes = this.recipesService.getRecipes();

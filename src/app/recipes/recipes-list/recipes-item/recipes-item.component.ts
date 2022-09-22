@@ -13,7 +13,7 @@ export class RecipesItemComponent implements OnInit {
   @Input() index: number;
   
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   
